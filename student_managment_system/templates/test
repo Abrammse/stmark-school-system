@@ -1,0 +1,56 @@
+                    <div class="modal fade text-left w-100" id="xlarge" tabindex="-1" aria-labelledby="myModalLabel16" style="display: none;" aria-hidden="true">
+                                    <div dir="rtl" class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel16"  style="font-family:'Cairo',sans-serif;" > اضافة ملف اكسيل  </h4>
+                                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                                                                                            <form class="form" action="{% url 'add_student_saveexel' %}" method="post"   enctype="multipart/form-data" >
+                                {% csrf_token %}
+                                <div class="row">
+                                                <div class="col-12 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title"  style="font-family:'Cairo',sans-serif;" >اضافة الطلاب عن طريقة رفع ملف اكيسل يحتوى علي معلومات الطلاب  </h5>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <!-- File uploader with multiple files upload -->
+<div class="filepond--root basic-filepond filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 78px;"><input class="filepond--browser" type="file" id="filepond--browser-i387jvo9m" aria-controls="filepond--assistant-i387jvo9m" aria-labelledby="filepond--drop-label-i387jvo9m" name=""><div class="filepond--drop-label" style="transform: translate3d(0px, 40px, 0px); opacity: 0; visibility: hidden; pointer-events: none;"><label for="filepond--browser-i387jvo9m" id="filepond--drop-label-i387jvo9m" aria-hidden="true">Drag &amp; Drop your files or <span class="filepond--label-action" tabindex="0">Browse</span></label></div><div class="filepond--list-scroller" style="transform: translate3d(0px, -4px, 0px);"><ul class="filepond--list" role="list"><li class="filepond--item" id="filepond--item-a97phym06" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1; height: 46px;" data-filepond-item-state="idle"><fieldset class="filepond--file-wrapper"><legend>1FSFXZ.xlsx</legend><div class="filepond--file"><button class="filepond--file-action-button filepond--action-abort-item-load" type="button" data-align="right" disabled="disabled" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 0; visibility: hidden; pointer-events: none;"><span>Abort</span></button><button class="filepond--file-action-button filepond--action-retry-item-load" type="button" data-align="right" disabled="disabled" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 0; visibility: hidden; pointer-events: none;"><svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M10.81 9.185l-.038.02A4.997 4.997 0 0 0 8 13.683a5 5 0 0 0 5 5 5 5 0 0 0 5-5 1 1 0 0 1 2 0A7 7 0 1 1 9.722 7.496l-.842-.21a.999.999 0 1 1 .484-1.94l3.23.806c.535.133.86.675.73 1.21l-.804 3.233a.997.997 0 0 1-1.21.73.997.997 0 0 1-.73-1.21l.23-.928v-.002z" fill="currentColor" fill-rule="nonzero"></path></svg><span>Retry</span></button><button class="filepond--file-action-button filepond--action-remove-item" type="button" data-align="left" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;"><svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M11.586 13l-2.293 2.293a1 1 0 0 0 1.414 1.414L13 14.414l2.293 2.293a1 1 0 0 0 1.414-1.414L14.414 13l2.293-2.293a1 1 0 0 0-1.414-1.414L13 11.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L11.586 13z" fill="currentColor" fill-rule="nonzero"></path></svg><span>Remove</span></button><div class="filepond--processing-complete-indicator" data-align="right" style="transform: scale3d(0.75, 0.75, 1); opacity: 0; visibility: hidden; pointer-events: none;"><svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><path d="M18.293 9.293a1 1 0 0 1 1.414 1.414l-7.002 7a1 1 0 0 1-1.414 0l-3.998-4a1 1 0 1 1 1.414-1.414L12 15.586l6.294-6.293z" fill="currentColor" fill-rule="nonzero"></path></svg></div><div class="filepond--file-info" style="transform: translate3d(35px, 0px, 0px);"><span class="filepond--file-info-main" aria-hidden="true">1FSFXZ.xlsx</span><span class="filepond--file-info-sub">9 KB</span></div><div class="filepond--file-status" style="transform: translate3d(35px, 0px, 0px); opacity: 0; visibility: hidden; pointer-events: none;"><span class="filepond--file-status-main"></span><span class="filepond--file-status-sub"></span></div><div class="filepond--progress-indicator filepond--load-indicator" style="opacity: 0; visibility: hidden; pointer-events: none;"><svg><path stroke-width="2" stroke-linecap="round"></path></svg></div><div class="filepond--progress-indicator filepond--process-indicator" style="opacity: 0; visibility: hidden; pointer-events: none;"><svg><path stroke-width="2" stroke-linecap="round"></path></svg></div></div></fieldset><div class="filepond--panel filepond--item-panel" data-scalable="true"><div class="filepond--panel-top filepond--item-panel"></div><div class="filepond--panel-center filepond--item-panel" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.3, 1);"></div><div class="filepond--panel-bottom filepond--item-panel" style="transform: translate3d(0px, 38px, 0px);"></div></div></li></ul></div><div class="filepond--panel filepond--panel-root" data-scalable="true"><div class="filepond--panel-top filepond--panel-root"></div><div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.62, 1);"></div><div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 70px, 0px);"></div></div><span class="filepond--assistant" id="filepond--assistant-i387jvo9m" role="status" aria-live="polite" aria-relevant="additions"></span><fieldset class="filepond--data"><input type="file" name="filepond"></fieldset><div class="filepond--drip"></div></div>                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+                                    <div class="col-12 d-flex justify-content-end">
+
+                                        <button type="submit" class="btn btn-primary me-1 mb-1" style="font-family:'Cairo',sans-serif;"   > اضافة طالب / ة</button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Close</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./static/hero-abs-2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+    <title> صفحة تسجيل الدخول |  مدرسة الالحان  </title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300&family=Reem+Kufi:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Coptic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap')
+@media (min-width: 768px) {
+    .small-image {
+        width: 70px; /* Or any size you prefer */
+        height:50px;
+    }
+}
+
+        </style>
+
+</head>
+<body style="background-image: url('../static/img.png')">
+
+    <!----------------------- Main Container -------------------------->
+<form action="{% url 'dologin' %}"  method="post">
+
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <!----------------------- Login Container -------------------------->
+
+       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+    <!--------------------------- Left Box ----------------------------->
+
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-image:url('../static/1.jpg'); ">
+           <div class="featured-image mb-3">
+
+
+           </div>
+       </div>
+
+    <!-------------------- ------ Right Box ---------------------------->
+            {% csrf_token %}
+       <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+                <div class="header-text mb-4" >
+                     <h2 style="text-align: center; font-family:'Cairo',sans-serif;" >"مرحبا بكم فى  "</h2>
+                     <h6 style="text-align: center; font-family:'Cairo',sans-serif; ">مدرسة القديس مارمرقس الرسول | للالحان  </h6>
+                </div>
+                <div class="input-group mb-3" data-validate="Name is required">
+                    <input style="font-family:'Cairo',sans-serif;" name="email" type="email" class="form-control form-control-lg bg-light fs-6" placeholder="ادخل اسم المستخدم " required>
+                </div>
+                <div class="input-group mb-1"  data-validate="Password is required" >
+                    <input  style="font-family:'Cairo',sans-serif;" name="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="كلمة المرور" required>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-primary w-100 fs-6" style="font-family:'Cairo',sans-serif;">تسجيل</button>
+                </div>
+
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-light w-100 fs-6"><small>  <a  style="text-decoration: none; color:black; font-family:'Cairo',sans-serif;" > العودة للصفحة الرئيسية اضغط هنا  </a></small></button>
+                </div>
+
+          </div>
+       </div> 
+
+      </div>
+    </div>
+</form>
+    <!-- SweetAlert JavaScript -->
+    <!-- Include SweetAlert2 script -->
+<!-- Include SweetAlert2 library -->
+<!-- Your script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Include SweetAlert2 library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Your script -->
+<script>
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            Swal.fire({
+                 title: "<span style='font-family: Almarai, sans-serif;font-size:30;'>{{ message|safe }}</span>",
+                html: "<span style='font-family: Cairo, sans-serif;'> اضغط حسنا </span>",
+                icon: "success",
+                 confirmButtonColor: '#3085d6',
+                 confirmButtonText: "<span style='font-family: Cairo, sans-serif;background:color:red; padding:10px;'>  حسنا </span>", // Change the text and color of the OK button
+                customClass: {
+                    content: 'text-center',
+                    actions: 'my-swal-actions' // Custom class for styling the buttons
+                }
+            }).then(() => {
+                // Redirect based on the user's type
+                {% if user.user_type == '1' %}
+                    window.location.href = '/index';
+                {% elif user.user_type == '2' %}
+                    window.location.href = '/staff_panal';
+                {% endif %}
+            });
+        {% elif message.tags == 'error' %}
+            Swal.fire({
+                 title: "<span style='font-family: Almarai, sans-serif;font-size:25;'>{{ message|safe }}</span>",
+                html: "<span style='font-family: Cairo, sans-serif;'> اضغط حسنا </span>",
+                 confirmButtonText: "<span style='font-family: Cairo, sans-serif;background:color:red;'>  حسنا </span>", // Change the text and color of the OK button
+
+                icon: "error",
+                customClass: {
+                    content: 'text-center',
+                     actions: 'my-swal-actions' // Custom class for styling the buttons
+
+                }
+            });
+        {% endif %}
+    {% endfor %}
+</script>
+
+
+<!-- Your script -->
+<style>
+    /* Define custom styling for the buttons */
+    .my-swal-actions button {
+        margin-left: 380px; /* Adjust the margin as per your requirements */
+        font-family: Cairo, sans-serif; /* Set the font family */
+        color: red; /* Change the color of the button text */
+    }
+</style>
+
+</body>
+</html>
