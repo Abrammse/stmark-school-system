@@ -1,12 +1,10 @@
-# Example of how to update requirements.txt to resolve conflicts with Django 3.2
-
 asgiref==3.7.2
 autopep8==2.0.4
 certifi==2023.11.17
 charset-normalizer==3.3.2
 defusedxml==0.7.1
 diff-match-patch==20230430
-Django>=3.2,<4.0  # Updated Django version range
+Django==5.0.1
 django-bootstrap-modal-forms==3.0.4
 django-bootstrap3==23.6
 django-ckeditor==6.6.1
